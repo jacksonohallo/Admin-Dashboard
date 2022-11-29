@@ -9,16 +9,21 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const StyledBox = styled(Box)({
-display: "flex",
-gap :10,
-
+  display: "flex",
+  gap: 10,
 });
 
 const MenuBox = styled(Box)({
-    display: "flex",
-    gap :30,
-    
-    })
+  display: "flex",
+  gap: 30,
+});
+const MenuItems = [
+  { Name: "Home", Link: "#" },
+  { Name: "Products", Link: "#" },
+  { Name: "Portfolio", Link: "#" },
+  { Name: "Blog", Link: "#" },
+  { Name: "Contact Us", Link: "#" },
+];
 const Navbar = () => {
   return (
     <AppBar>
@@ -29,13 +34,10 @@ const Navbar = () => {
           <Instagram />
         </StyledBox>
         <MenuBox>
-<Typography>Home</Typography>
-<Typography>Products</Typography>
-<Typography>Portfolio</Typography>
-<Typography>Blog</Typography>
-<Typography>Contact Us</Typography>
-
-       </MenuBox>
+          {MenuItems.map((item) => (
+            <Typography sx={{cursor:"pointer"}}>{item.Name}</Typography>
+          ))}
+        </MenuBox>
         <Box>Social</Box>
       </StyledToolbar>
     </AppBar>
