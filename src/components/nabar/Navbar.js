@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { AppBar, Toolbar, Box } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import React from "react";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 
@@ -10,10 +10,15 @@ const StyledToolbar = styled(Toolbar)({
 
 const StyledBox = styled(Box)({
 display: "flex",
-gap :10
+gap :10,
 
-})
+});
 
+const MenuBox = styled(Box)({
+    display: "flex",
+    gap :30,
+    
+    })
 const Navbar = () => {
   return (
     <AppBar>
@@ -23,7 +28,14 @@ const Navbar = () => {
           <Twitter />
           <Instagram />
         </StyledBox>
-        <Box>Menu</Box>
+        <MenuBox>
+<Typography>Home</Typography>
+<Typography>Products</Typography>
+<Typography>Portfolio</Typography>
+<Typography>Blog</Typography>
+<Typography>Contact Us</Typography>
+
+       </MenuBox>
         <Box>Social</Box>
       </StyledToolbar>
     </AppBar>
