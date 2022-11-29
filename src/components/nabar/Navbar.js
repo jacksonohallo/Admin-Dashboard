@@ -29,6 +29,9 @@ const MenuItems = [
   { Name: "Blog", Link: "#" },
   { Name: "Contact Us", Link: "#" },
 ];
+
+// const [open,setOpen] = useState(false)
+
 const Navbar = () => {
   return (
     <AppBar sx={{ background: "black" }}>
