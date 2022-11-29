@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { AppBar, Toolbar, Box, Typography, InputBase } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography, InputBase, Menu, MenuItem } from "@mui/material";
 import React from "react";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram, Twitter, Menu as MenuIcon } from "@mui/icons-material";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -38,7 +38,7 @@ const Navbar = () => {
           <Twitter />
           <Instagram />
         </StyledBox>
-        <MenuBox>
+        <MenuBox sx={{ display: { xs: "none", sm: "none", md: "flex" } }}>
           {MenuItems.map((item) => (
             <Typography sx={{ cursor: "pointer", fontSize: "14px" }}>
               {item.Name}
@@ -47,8 +47,37 @@ const Navbar = () => {
         </MenuBox>
         <SearchBox>
           <InputBase placeholder="search..." sx={{ color: "white" }} />
+          <MenuIcon sx={{ color: "white", display: { xs: "block", sm: "block", md: "none" } }} />
         </SearchBox>
       </StyledToolbar>
+
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+     
+        open={true}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+      <Box style={{ width:350, height:"90vh"   }}>
+
+      {MenuItems.map((item) => (
+            <MenuItem sx={{ cursor: "pointer", fontSize: "14px" }}>
+              {item.Name}
+            </MenuItem>
+          ))}
+
+      </Box>
+
+      </Menu>
+
+
     </AppBar>
   );
 };
