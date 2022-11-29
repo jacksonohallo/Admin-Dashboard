@@ -26,7 +26,7 @@ const MenuItems = [
 ];
 const Navbar = () => {
   return (
-    <AppBar>
+    <AppBar sx={{background:"black"}}>
       <StyledToolbar>
         <StyledBox>
           <Facebook />
@@ -35,7 +35,11 @@ const Navbar = () => {
         </StyledBox>
         <MenuBox>
           {MenuItems.map((item) => (
-            <Typography sx={{cursor:"pointer"}}>{item.Name}</Typography>
+            <Typography sx={{cursor:"pointer", fontSize:"14px"}}>
+                
+                {item.Name}
+            
+            </Typography>
           ))}
         </MenuBox>
         <Box>Social</Box>
