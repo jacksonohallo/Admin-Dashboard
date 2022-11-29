@@ -8,15 +8,21 @@ const StyledToolbar = styled(Toolbar)({
   justifyContent: "space-between",
 });
 
+const StyledBox = styled(Box)({
+display: "flex",
+gap :10
+
+})
+
 const Navbar = () => {
   return (
     <AppBar>
       <StyledToolbar>
-        <Box>
+        <StyledBox>
           <Facebook />
           <Twitter />
           <Instagram />
-        </Box>
+        </StyledBox>
         <Box>Menu</Box>
         <Box>Social</Box>
       </StyledToolbar>
