@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { AppBar, Toolbar, Box, Typography } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography, InputBase } from "@mui/material";
 import React from "react";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 
@@ -17,6 +17,11 @@ const MenuBox = styled(Box)({
   display: "flex",
   gap: 30,
 });
+
+const SearchBox = styled(Box)({
+  display: "flex",
+  gap: 5,
+});
 const MenuItems = [
   { Name: "Home", Link: "#" },
   { Name: "Products", Link: "#" },
@@ -26,7 +31,7 @@ const MenuItems = [
 ];
 const Navbar = () => {
   return (
-    <AppBar sx={{background:"black"}}>
+    <AppBar sx={{ background: "black" }}>
       <StyledToolbar>
         <StyledBox>
           <Facebook />
@@ -35,14 +40,14 @@ const Navbar = () => {
         </StyledBox>
         <MenuBox>
           {MenuItems.map((item) => (
-            <Typography sx={{cursor:"pointer", fontSize:"14px"}}>
-                
-                {item.Name}
-            
+            <Typography sx={{ cursor: "pointer", fontSize: "14px" }}>
+              {item.Name}
             </Typography>
           ))}
         </MenuBox>
-        <Box>Social</Box>
+        <SearchBox>
+          <InputBase placeholder="search..." sx={{ color: "white" }} />
+        </SearchBox>
       </StyledToolbar>
     </AppBar>
   );
