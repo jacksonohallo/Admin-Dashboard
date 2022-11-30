@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { AppBar, Toolbar, Box, Typography, InputBase, Menu, MenuItem } from "@mui/material";
-import React from "react";
+import React,{useState} from "react";
 import { Facebook, Instagram, Twitter, Menu as MenuIcon } from "@mui/icons-material";
 
 const StyledToolbar = styled(Toolbar)({
@@ -30,9 +30,11 @@ const MenuItems = [
   { Name: "Contact Us", Link: "#" },
 ];
 
-// const [open,setOpen] = useState(false)
+
 
 const Navbar = () => {
+  const [open,setOpen] = useState(false)
+
   return (
     <AppBar sx={{ background: "black" }}>
       <StyledToolbar>
@@ -50,7 +52,11 @@ const Navbar = () => {
         </MenuBox>
         <SearchBox>
           <InputBase placeholder="search..." sx={{ color: "white" }} />
-          <MenuIcon sx={{ color: "white", display: { xs: "block", sm: "block", md: "none" } }} />
+          <MenuIcon sx={{ color: "white", display: { xs: "block", sm: "block", md: "none" } }} 
+          
+          onClick={()=>setOpen(!open)}
+          />
+          
         </SearchBox>
       </StyledToolbar>
 
@@ -58,7 +64,8 @@ const Navbar = () => {
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
      
-        open={true}
+        open={open}
+        onClose={()=>setOpen(!open)}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
