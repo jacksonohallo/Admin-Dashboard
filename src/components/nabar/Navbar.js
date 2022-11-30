@@ -36,7 +36,7 @@ const Navbar = () => {
   const [open,setOpen] = useState(false)
 
   return (
-    <AppBar sx={{ background: "black" }}>
+    <AppBar sx={{ background: "black", position:"static" }}>
       <StyledToolbar>
         <StyledBox>
           <Facebook />
