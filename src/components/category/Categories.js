@@ -15,16 +15,15 @@ backgroundPosition: "center center"
 });
 
 const StyledTypography=styled(Typography)({
-margin: "25px 50px 25px 50px",
+ margin: "25px 50px 25px 50px",
 background: "white",
 opacity: "0.8"
-
 })
 
 const Categories = () => {
   return (
 <Box>
-<Stack direction={"row"} spacing={4}>
+<Stack direction={"row"} spacing={4} mt={5}>
    <StyledBox sx={{backgroundImage:`url(${kidImage})`}}>
     <StyledTypography align="center" varient="h3">Kid</StyledTypography></StyledBox> 
    <StyledBox sx={{backgroundImage:`url(${womenImage})` }}>
