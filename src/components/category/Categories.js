@@ -23,7 +23,9 @@ opacity: "0.8"
 const Categories = () => {
   return (
 <Box>
-<Stack direction={"row"} spacing={4} mt={5}>
+<Stack direction={{xs:"column", sm:"row"}}
+ spacing={{xs:1, sm:2, md:4}}
+  mt={5}>
    <StyledBox sx={{backgroundImage:`url(${kidImage})`}}>
     <StyledTypography align="center" varient="h3">Kid</StyledTypography></StyledBox> 
    <StyledBox sx={{backgroundImage:`url(${womenImage})` }}>
@@ -31,11 +33,7 @@ const Categories = () => {
    <StyledBox sx ={{background:`url(${menImage})`}}>
    <StyledTypography align="center" varient="h3">Women</StyledTypography></StyledBox> 
  
-
-
 </Stack>
-
-
 
     </Box>
   )
