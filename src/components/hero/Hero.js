@@ -7,7 +7,7 @@ const Hero = () => {
     
     <Box>
 <Typography varient="h3" align="center" sx={{fontWeight:900}}>
-Abelard Enterprises<b style={{color:"red"}}>BLOG</b>
+Abelard Enterprises<b style={{color:"red"}}>LIMITED</b>
 </Typography>
 <Typography varient="body2" align="center"sx={{fontWeight:100}}>
 We make you look better for you
